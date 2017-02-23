@@ -1,5 +1,5 @@
 class Node:
-
+    
     def __init__(self, data):
         self.data=data
         self.next=None
@@ -25,19 +25,7 @@ class LinkedList:
                 p=p.next
             s+= p.data
             return s
-        
-                        
-#         def remove(self, p):
-#             old_curr = self.head 
-#             curr = self.head 
-#             while(curr.next != None): 
-#                 if (curr.data == p.data):
-#                     #p.data = p.next.data
-#                     #p.next=p.next.next
-#                     curr.data = curr.next.data
-#                     curr.next = curr.next.next
-#             return old_curr   
-
+                       
         def delete(self, data):
             current = self.head
             prev = None
@@ -61,5 +49,3 @@ if __name__ == '__main__':
     print l      
     l.delete('a')
     print l 
-
-
