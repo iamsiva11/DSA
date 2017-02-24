@@ -1,8 +1,3 @@
-"""
-Todo:
-
-"""
-
 class Node:
 
     def __init__(self, data):
@@ -26,9 +21,8 @@ class LinkedList:
                 self.size+=1
 
         def __len__(self):
-            return self.size
-                
-          
+            return self.size                
+
         def __str__(self):
             s = ""
             p = self.head
@@ -52,7 +46,6 @@ class LinkedList:
                 prev = current
                 current = current.next
             return None
-            
 
 if __name__ == '__main__':
     l = LinkedList()
