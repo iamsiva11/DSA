@@ -7,7 +7,7 @@ class queue:
     def enqueue(self, item):
         self.items.append(item)
     
-    def enqueue(self):
+    def dequeue(self):
         if (not self.isEmpty()):  
             self.items = self.items[1:]            
 
@@ -20,13 +20,9 @@ class queue:
     
 if __name__ == "__main__":
     q = queue()
-    q.push(2)
-    q.push(3)
-    q.push(4)
-    q.pop()
-    q.pop()
+    q.enqueue(2)
+    q.enqueue(3)
+    q.enqueue(4)
+    q.dequeue()
+    q.dequeue()
     print q
-    
-
-    
-    
