@@ -1,5 +1,10 @@
+"""
+Todo:
+
+"""
+
 class Node:
-    
+
     def __init__(self, data):
         self.data=data
         self.next=None
@@ -21,9 +26,9 @@ class LinkedList:
             s = ""
             p = self.head
             while(p.next != None):
-                s+=p.data
-                p=p.next
-            s+= p.data
+                s += "->" + p.data
+                p = p.next
+            s += "->" + p.data
             return s
                        
         def delete(self, data):
