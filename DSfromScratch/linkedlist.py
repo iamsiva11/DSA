@@ -13,14 +13,21 @@ class LinkedList:
     
         def __init__(self):
             self.head = None
+            self.size = 0
         
         def add(self, data):
             node = Node(data)
             if  self.head==None:
                 self.head=node
+                self.size+=1
             else:
                 node.next=self.head
                 self.head=node
+                self.size+=1
+
+        def __len__(self):
+            return self.size
+                
           
         def __str__(self):
             s = ""
@@ -40,6 +47,7 @@ class LinkedList:
                         self.head = current.next
                     else:
                         prev.next = current.next
+                    self.size-=1    
                     return current
                 prev = current
                 current = current.next
@@ -54,3 +62,4 @@ if __name__ == '__main__':
     print l      
     l.delete('a')
     print l 
+    print len(l)
