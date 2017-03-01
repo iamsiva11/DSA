@@ -7,10 +7,10 @@ class Stack:
 		self.q.append(x)
 
 	def pop(self):
-
 		n=len(self.q)
 		pop_element=None
-
+		
+		#Bring all elements from front to back
 		for _ in range(n):
 			self.q.append(self.q[0])
 			del self.q[0]
@@ -19,9 +19,6 @@ class Stack:
     
 	def __str__(self):
 		return ",".join(map(str,self.q))
-		#return self.q
-    
-
 
 if __name__=="__main__":
 	stck=Stack()
