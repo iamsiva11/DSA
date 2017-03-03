@@ -3,31 +3,29 @@ class Hashmap:
     
     def __init__(self):
         self.hashmap = [ [] for i in range(256) ]  #256*[]
-        # [ [][][][][]...] - This is how t looks like
+        # [ [][][][][]...] - This is how it will look like
 
     def insert(self, key, value):
-
-        # mapping the keyto the hashmap range
+        # Mapping the keyto the hashmap range
         hash_key = hash(key) % len(self.hashmap)
-
         key_exists= False
-        #The list of list index value
+        # List of list index value
         bucket = self.hashmap[hash_key]
-
-        #Iterating through all the keys in the storage index, 
-        #To check it key already exists
+        """Iterating through all the keys in the storage index, 
+            To check it key already exists"""
         for i, kv in enumerate(bucket):
             k, v = kv
             if key == k:
                 key_exists = True
                 break
-
-        if key_exists: #If exists, replace the key,value
+        #If exists, replace the key,Value
+        if key_exists: 
             bucket[i] = ((key, value))
-        else: #If not , add to the existing storage index
+        #If not, add to the existing storage index
+        else: 
             bucket.append((key, value))
                 
-                
+
     def retrieve(self , key):
         hash_key = hash(key) % len(self.hashmap)
         bucket = self.hashmap[hash_key]        
@@ -35,7 +33,6 @@ class Hashmap:
             k,v = kv
             return v
         raise KeyError
-
 
 if __name__ =="__main__":
     hm = Hashmap()
